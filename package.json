@@ -13,10 +13,7 @@
   ],
   "author": "Prince Cheruvathur",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/prncher/HOCPattern/issues"
-  },
-  "homepage": "https://github.com/prncher/HOCPattern#readme",
+
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
