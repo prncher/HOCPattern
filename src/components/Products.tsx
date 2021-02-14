@@ -3,6 +3,7 @@ import { ProductsProps, withProducts } from './WithProducts'
 
 class ProductListBase extends React.Component<ProductsProps>{
     render() {
+        const {products} = this.props;
         return (
             <React.Fragment>
                 <h3>Products</h3>

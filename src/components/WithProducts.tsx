@@ -40,7 +40,7 @@ export let withProducts = (ContainerComp: React.ComponentClass<ProductsProps>) =
             WebserviceClient.doRequest(
                 'get', api, {}, beforeRequest,
                 (response: AxiosResponse) => {
-                    onRequestSuccess(response.data as Product[]);
+                    onRequestSuccess(response.data.value as Product[]);
                 },
                 (error: IErrorResponse) => {
                     console.log(JSON.stringify(error));
