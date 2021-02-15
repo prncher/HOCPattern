@@ -5,6 +5,7 @@ import { AxiosResponse } from 'axios';
 
 export interface ProductsProps {
     products?: Product[];
+    fetchAgain?: boolean;
 }
 
 export let withProductsFC = (ContainerComp: React.FunctionComponent<ProductsProps>) => {
@@ -27,7 +28,7 @@ export let withProductsFC = (ContainerComp: React.FunctionComponent<ProductsProp
 
         React.useEffect(() => {
             fetch(p => setProducts(p))
-        });
+        }, [props.fetchAgain]);
 
         return (
             <ContainerComp

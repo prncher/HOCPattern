@@ -3,6 +3,7 @@ import { ProductsProps, withProductsFC } from './withProductsFC'
 
 const ProductsFC: React.FC<ProductsProps> = (props) => {
     const {products} = props;
+    console.log(products);
     return (
         <React.Fragment>
             <h3>Products</h3>

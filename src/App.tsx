@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 //import { ProductList } from './components/Products'
-import { ProductListFC } from './components/ProductsFC'
+import ProductsLister from './ProductsLister'
 
 function App() {
   return (
@@ -10,7 +10,16 @@ function App() {
       <header className="App-header">
         <span>This is the Header</span>
       </header>
-      <ProductListFC />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProductsLister />
+      </Suspense>
+      {/* React.StrictMode calls a provider child  and some other hooks
+      related functions twice */}
+      {/* <React.StrictMode>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductsLister />
+        </Suspense>
+      </React.StrictMode>, */}
     </div>
   );
 }
