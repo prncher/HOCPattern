@@ -32,6 +32,9 @@ const ProductsLister: React.FC<{}> = () => {
         return (<ProductsContextChanger {...pcContextProps} />);
     }
 
+    // Using React.StrictMode will make showContextChanger called
+    // twice. This is a React provision to make sure hooks
+    // are used correctly.
     return (
         <ProductsContext.Provider value={productsInitializer}>
             {showContextChanger()}

@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/prncher/HOCPattern.git"
   },
+  "private": true,
   "keywords": [
     "React",
     "OData",

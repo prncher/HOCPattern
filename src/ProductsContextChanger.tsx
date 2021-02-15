@@ -29,6 +29,8 @@ const ProductsContextChanger = (props: ProductsContextChangerProps) => {
     const [get, setGetProducts] = useState<boolean>(false);
     const {changeProducts} = props;
 
+    // See useMemo below to avoid calling changeProducts multiple
+    // time
     const memoCallbackFn = () => {
         get && fetch((products: Product[]) => {
             setGetProducts(false);
@@ -36,6 +38,8 @@ const ProductsContextChanger = (props: ProductsContextChangerProps) => {
         });
     }
 
+    // useMemo helps to not call the callback for same values
+    // of dependency.
     useMemo(memoCallbackFn, [get]);
 
     return (
